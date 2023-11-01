@@ -1,20 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoginPanel from "./c-cpns/LoginPanel.vue"
+</script>
 
 <template>
   <div class="login">
-    <el-row class="mb-4">
-      <el-button>Default</el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-    </el-row>
+    <login-panel />
   </div>
 </template>
 
 <style lang="less" scoped>
 .login {
-  color: red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

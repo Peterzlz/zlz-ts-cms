@@ -21,7 +21,7 @@ input {
 body {
   font: 16px/1.5 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiyi SC', 'WenQuanYi Micro Hei', sans-serif;
   color: #333;
-  background-color: #f7f8fb;
+  /* background-color: #f7f8fb; */
 }
 /* 去除列表默认样式 */
 ul,

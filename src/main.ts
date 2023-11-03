@@ -6,6 +6,7 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue"
 
 import "normalize.css"
 import "@/assets/css/index.css"
+// import "element-plus/es/components/message/style/css"
 
 const app = createApp(App)
 

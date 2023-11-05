@@ -33,11 +33,9 @@ class HYRequest {
     )
     this.instance.interceptors.response.use(
       (res) => {
-        console.log("全局响应成功的拦截")
         return res.data
       },
       (err) => {
-        console.log("全局响应失败的拦截")
         return err
       }
     )

@@ -2,6 +2,7 @@
 import { reactive, ref } from "vue"
 import type { FormInstance, FormRules } from "element-plus"
 import { ElMessage } from "element-plus"
+import useLoginStore from "@/stores/login/login"
 
 // 定义变量类型：帐号和密码
 interface RuleForm {
@@ -29,15 +30,24 @@ const rules = reactive<FormRules<RuleForm>>({
   ]
 })
 
+// 获取登录store对象
+const loginStore = useLoginStore()
+
 function loginAction() {
   // console.log(accountInfo.account, accountInfo.password)
   ruleFormRef.value?.validate((valid) => {
     if (valid) {
-      // console.log("验证成功！")
+      // 提示登录成功
       ElMessage({
         message: "登录成功！",
         type: "success"
       })
+
+      // 获取输入框的账号和密码
+      const account = accountInfo.account
+      const password = accountInfo.password
+      // 发送异步请求
+      loginStore.fetchLoginDataAction(account, password)
     } else {
       // console.log("验证失败！")
       ElMessage.error("登录失败！请输入正确的账号和密码！")
@@ -45,6 +55,7 @@ function loginAction() {
   })
 }
 
+// 将子组件的事件暴露出去，给父组件LoginPanel调用
 defineExpose({
   loginAction
 })

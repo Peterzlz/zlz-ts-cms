@@ -16,6 +16,8 @@ const accountPaneRef = ref<InstanceType<typeof AccountPane>>()
 function loginBtn() {
   if (activeName.value === "account") {
     console.log("正在进行帐号登录")
+
+    // 调用子组件AccountPane的事件loginAction
     accountPaneRef.value?.loginAction()
   } else {
     console.log("正在进行手机登录")

@@ -18,17 +18,17 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()]
     }),
     createStyleImportPlugin({
-      resolves: [ElementPlusResolve()]
-      // libs: [
-      //   // 如果没有你需要的resolve，可以在lib内直接写，也可以给我们提供PR
-      //   {
-      //     libraryName: "ant-design-vue",
-      //     esModule: true,
-      //     resolveStyle: (name) => {
-      //       return `ant-design-vue/es/${name}/style/index`
-      //     }
-      //   }
-      // ]
+      resolves: [ElementPlusResolve()],
+      libs: [
+        // 如果没有你需要的resolve，可以在lib内直接写，也可以给我们提供PR
+        {
+          libraryName: "element-plus",
+          esModule: true,
+          resolveStyle: (name) => {
+            return `element-plus/theme-chalk/${name}.css`
+          }
+        }
+      ]
     })
   ],
   resolve: {
